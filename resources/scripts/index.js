@@ -9,7 +9,6 @@ const scoreParagraph = document.getElementById("score");
 const gameHistoryParagraph = document.getElementById("game-history");
 const errorpara = document.getElementById("error");
 
-
 // instantiate the game object from the `RockPaperScissors` class.
 let game;
 
@@ -28,14 +27,20 @@ function updateGameHistoryUI(){
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function () {
-  const username = 
-  game = new RockPaperScissors(userName);
+  //const username = username.value;
+  game = new RockPaperScissors(userName.value);
+
+  //welcomeScreen.classList.add("d-none");
   // Complete
 });
 
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
-  
+  userschoice = userSelection.value;
+
+  alert(" userchoice: " + userschoice);
+  //errorpara.innerHTML += typeof game;
+  game.play(userschoice);  
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button

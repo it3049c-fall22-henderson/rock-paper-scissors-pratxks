@@ -48,7 +48,25 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   play(userSelection) {
+    //alert("Inside play: " + userSelection);
 
+    let cpuResponse = this.generateCPUResponse();
+
+    alert("CPU Response: " + cpuResponse);
+
+    let winorlose = this.determineWinner(userSelection, cpuResponse);
+
+    alert("Winner: " + winorlose);
+
+    let winner = "Game Tie";
+    if (winorlose == "win") {
+      this.score.user = this.score.user + 1;
+      winner = this.username + ' wins';
+    }
+    if (winorlose == "lose") {
+      this.score.cpu = this.score.cpu + 1;;
+      winner = 'CPU wins';
+    }
   }
 
 }

@@ -17,12 +17,21 @@ gameScreen.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-
+  alert("inside update score para");
+  scoreParagraph.innerHTML = game.username + ": " + game.score.user + " CPU: " + game.score.cpu;
 }
 
 // updateGameHistoryUI
 function updateGameHistoryUI(){
+  alert("inside update history para");
+  
+  let historystr = "";
+  
+  game.gameHistoryLog.forEach(function generateHistoryString(value, index, array) {
+    historystr += value + "<br>";
+  });
 
+  gameHistoryParagraph.innerHTML = historystr;
 }
 
 // start-game-button EventListener
@@ -40,7 +49,12 @@ goButton.addEventListener(`click`, function () {
 
   alert(" userchoice: " + userschoice);
   //errorpara.innerHTML += typeof game;
-  game.play(userschoice);  
+  game.play(userschoice); 
+
+  alert("after play");
+  
+  updateScoreTallyUI();
+  updateGameHistoryUI();
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button

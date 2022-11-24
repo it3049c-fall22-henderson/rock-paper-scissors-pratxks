@@ -17,14 +17,11 @@ gameScreen.classList.add("d-none");
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-  alert("inside update score para");
   scoreParagraph.innerHTML = game.username + ": " + game.score.user + " CPU: " + game.score.cpu;
 }
 
 // updateGameHistoryUI
 function updateGameHistoryUI(){
-  alert("inside update history para");
-  
   let historystr = "";
   
   game.gameHistoryLog.forEach(function generateHistoryString(value, index, array) {
@@ -48,11 +45,7 @@ startGameButton.addEventListener("click", function () {
 goButton.addEventListener("click", function () {
   userschoice = userSelection.value;
 
-  alert(" userchoice: " + userschoice);
-  //errorpara.innerHTML += typeof game;
-  game.play(userschoice); 
-
-  alert("after play");
+  game.play(userschoice);
   
   updateScoreTallyUI();
   updateGameHistoryUI();

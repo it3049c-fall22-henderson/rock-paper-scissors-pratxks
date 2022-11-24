@@ -25,6 +25,25 @@
                 <button type="button" class="btn btn-primary" id="start-game-button">Start Game!</button>
             </form>
         </div>
+
+        <div id="game-screen">
+            <div id="score-tally">
+                <p id="score">USER: 0 CPU: 0</p>
+            </div>
+
+            <form id="game-form" method="post">
+                <div class="form-group">
+                    <label for="user-selection">Select your choice:</label>
+                    <select class="custom-select" id="user-selection" name="user-selection">
+                        <option value="rock">Rock</option>
+                        <option value="paper">Paper</option>
+                        <option value="scissors">Scissors</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-success" id="go-button">Go!</button>
+            </form>
+            <p id="game-history"></p>
+        </div>
     </div>
 
     <!-- Our own Scripts -->

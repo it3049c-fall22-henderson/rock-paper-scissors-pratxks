@@ -3,8 +3,8 @@ class RockPaperScissors {
     this.username = username;
     this.score = {
       user: 0,
-      cpu:0 
-    },
+      cpu: 0
+    };
     this.gameHistoryLog = [];
   }
 
@@ -12,10 +12,10 @@ class RockPaperScissors {
    * RETURN: one of the following values (`rock`, `paper`, `scissors`)
    * using Math.random() method, you should be able to get one of the following values
    */
-  generateCPUResponse(){
-    const acceptedValues = [ `rock`, `paper`, `scissors` ];
+  generateCPUResponse() {
+    const acceptedValues = ["rock", "paper", "scissors"];
 
-    return ;
+    return acceptedValues[Math.floor(Math.random() * 3)];
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -32,15 +32,22 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
-  determineWinner(userSelection, cpuSelection){
-
+  determineWinner(userSelection, cpuSelection) {
+    if (userSelection == cpuSelection) return "tie";
+    else if (((userSelection == 'rock') && (cpuSelection == 'scissors'))
+      || ((userSelection == 'paper') && (cpuSelection == 'rock'))
+      || ((userSelection == 'scissors') && (cpuSelection == 'paper'))) return "win";
+    else if (((userSelection == 'scissors') && (cpuSelection == 'rock'))
+      || ((userSelection == 'rock') && (cpuSelection == 'paper'))
+      || ((userSelection == 'paper') && (cpuSelection == 'scissors'))) return "lose";
+    else return "lose";
   }
 
   /**
    * 
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
-  play(userSelection){
+  play(userSelection) {
 
   }
 

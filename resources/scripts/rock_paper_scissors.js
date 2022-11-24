@@ -67,6 +67,20 @@ class RockPaperScissors {
       this.score.cpu = this.score.cpu + 1;;
       winner = 'CPU wins';
     }
+
+    alert("Winner string: " + winner + " User Score: " + this.score.user + " CPU Score: " + this.score.cpu);
+
+    let historystr = this.username + " selected " + userSelection + ", CPU selected " + cpuResponse + ": " + winner;
+
+    alert("history string: " + historystr);
+
+    this.gameHistoryLog.push(historystr);
+
+    alert("history log: " + this.gameHistoryLog[0]);
+    //this.gameHistoryLog.push(this.username + " selected " + userSelection + ", CPU selected " + cpuSelection
+    // + ": " + winner);
+
+    return;
   }
 
 }

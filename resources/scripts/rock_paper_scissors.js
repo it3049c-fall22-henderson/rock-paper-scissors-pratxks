@@ -70,4 +70,13 @@ class RockPaperScissors {
     return;
   }
 
+  resetGame() {
+
+    this.score.user = 0;
+    this.score.cpu = 0;
+    this.gameHistoryLog = [];
+
+    return;
+  }
+
 }

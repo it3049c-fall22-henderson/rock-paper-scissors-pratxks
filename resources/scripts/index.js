@@ -5,6 +5,7 @@ const startGameButton = document.getElementById("start-game-button");
 const userName = document.getElementById("username");
 const userSelection = document.getElementById("user-selection");
 const goButton = document.getElementById("go-button");
+const resetButton = document.getElementById("reset-button");
 const scoreParagraph = document.getElementById("score");
 const gameHistoryParagraph = document.getElementById("game-history");
 const errorpara = document.getElementById("error");
@@ -39,6 +40,9 @@ startGameButton.addEventListener("click", function () {
   gameScreen.classList.remove("d-none");
   welcomeScreen.classList.add("d-none");
   // Complete
+
+  updateScoreTallyUI();
+  updateGameHistoryUI();  
 });
 
 // go-button EventListener
@@ -51,7 +55,13 @@ goButton.addEventListener("click", function () {
   updateGameHistoryUI();
 });
 
+resetButton.addEventListener("click", function () {
+  game.resetGame();
+
+  updateScoreTallyUI();
+  updateGameHistoryUI();
+});
 // If you're doing the extra-credit, uncomment the below: reset-game-button
-// resetGameButton.addEventListener(`click`, function(e) { 
+//resetGameButton.addEventListener(`click`, function(e) { 
   
 // });
